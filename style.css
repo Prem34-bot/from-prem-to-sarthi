@@ -1,0 +1,1063 @@
+/* ==========================================
+   FROM PREM TO SARTHI
+   STYLE.CSS - PART 1
+========================================== */
+
+/* ---------- GOOGLE FONT ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ---------- RESET ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffe8ef,
+        #ffd8e8,
+        #ffeef5
+    );
+
+    color:#4d2d3a;
+
+    height:100vh;
+
+}
+
+/* ---------- PAGES ---------- */
+
+.page{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.8s;
+
+    padding:30px;
+
+}
+
+.page.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/* ---------- GLASS CARD ---------- */
+
+.glass{
+
+    width:min(700px,95%);
+
+    padding:50px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.30);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.10);
+
+}
+
+/* ---------- HEADINGS ---------- */
+
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:75px;
+
+    color:#ff4d88;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+h1 span{
+
+    font-size:45px;
+
+}
+
+h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:55px;
+
+    color:#ff4d88;
+
+    margin-bottom:20px;
+
+}
+
+p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#555;
+
+}
+
+/* ---------- BUTTON ---------- */
+
+button{
+
+    margin-top:35px;
+
+    padding:16px 42px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff5d95,
+        #ff87b2
+    );
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 10px 25px rgba(255,90,140,.30);
+
+}
+
+button:hover{
+
+    transform:translateY(-4px) scale(1.04);
+
+    box-shadow:
+
+    0 18px 35px rgba(255,90,140,.35);
+
+}
+
+/* ---------- LOADING ---------- */
+
+#loading{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ffe6f1,
+        #ffd9ea
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:9999;
+
+    transition:1s;
+
+}
+
+#loading.hidden{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.loader{
+
+    font-size:70px;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+#loading h2{
+
+    margin-top:20px;
+
+    font-size:35px;
+
+}
+
+/* ---------- PETALS ---------- */
+
+#petals{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:2;
+
+}
+
+/* ---------- WELCOME ---------- */
+
+#welcome{
+
+    background:
+
+    linear-gradient(
+
+        rgba(255,240,247,.90),
+
+        rgba(255,240,247,.90)
+
+    ),
+
+    url("assets/bg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+/* ---------- GIFT ---------- */
+
+#gift{
+
+    text-align:center;
+
+}
+
+.gift-container{
+
+    width:min(700px,95%);
+
+}
+
+.gift-container p{
+
+    margin-bottom:30px;
+
+}
+
+#giftImage{
+
+    width:240px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    animation:giftFloat 3s ease-in-out infinite;
+
+    filter:
+
+    drop-shadow(
+
+    0 20px 30px
+
+    rgba(0,0,0,.18)
+
+    );
+
+}
+
+#giftImage:hover{
+
+    transform:scale(1.08);
+
+}
+
+#giftImage.open{
+
+    animation:giftOpen .8s forwards;
+
+}
+
+/* ---------- FADE ---------- */
+
+.fadeIn{
+
+    animation:fade .8s;
+
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes giftFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes giftOpen{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.25) rotate(8deg);
+
+}
+
+100%{
+
+transform:scale(.2);
+
+opacity:0;
+
+}
+
+}
+
+/* ==========================================
+   FROM PREM TO SARTHI
+   STYLE.CSS - PART 2
+========================================== */
+
+/* ---------- FLOWER PAGE ---------- */
+
+#flowers{
+
+    background:
+    linear-gradient(
+        rgba(255,240,247,.65),
+        rgba(255,240,247,.65)
+    ),
+    url("assets/flowers.jpg");
+
+    background-size:cover;
+    background-position:center;
+    text-align:center;
+
+}
+
+.flower-overlay{
+
+    width:min(850px,92%);
+
+    padding:60px;
+
+    background:rgba(255,255,255,.28);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.4);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.flower-overlay h2{
+
+    font-size:58px;
+
+    line-height:1.4;
+
+    margin-bottom:35px;
+
+}
+
+/* ---------- GALLERY ---------- */
+
+#gallery{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #fff5f9,
+        #ffe8f1
+    );
+
+    padding:60px 30px;
+
+}
+
+#gallery h2{
+
+    margin-bottom:40px;
+
+}
+
+.photo-grid{
+
+    width:min(1100px,95%);
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+
+    gap:28px;
+
+    margin:auto;
+
+}
+
+.photo-grid img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    border-radius:24px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.photo-grid img:hover{
+
+    transform:
+
+    scale(1.05)
+    rotate(1deg);
+
+    box-shadow:
+
+    0 20px 45px rgba(255,90,140,.30);
+
+}
+
+/* ---------- IMAGE POP ---------- */
+
+.photo-grid img:nth-child(odd){
+
+    animation:float1 5s ease-in-out infinite;
+
+}
+
+.photo-grid img:nth-child(even){
+
+    animation:float2 6s ease-in-out infinite;
+
+}
+
+/* ---------- BIRTHDAY ---------- */
+
+#birthday{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ffeaf3,
+        #fff5fa
+    );
+
+}
+
+#birthday .glass{
+
+    width:min(900px,95%);
+
+}
+
+#birthday p{
+
+    margin-bottom:30px;
+
+}
+
+#birthday .photo-grid{
+
+    margin-top:25px;
+
+}
+
+#birthday .photo-grid img{
+
+    border-radius:22px;
+
+}
+
+/* ---------- GALLERY BUTTON ---------- */
+
+#birthdayButton,
+#galleryButton{
+
+    margin-top:45px;
+
+}
+
+/* ---------- SECTION FADE ---------- */
+
+#flowers.active,
+#gallery.active,
+#birthday.active{
+
+    animation:fade .8s ease;
+
+}
+
+/* ---------- FLOATING ANIMATION ---------- */
+
+@keyframes float1{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes float2{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================================
+   FROM PREM TO SARTHI
+   STYLE.CSS - PART 3
+========================================== */
+
+/* ---------- LETTER PAGE ---------- */
+
+#letter{
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff8fb,
+        #ffeef6
+    );
+
+    padding:40px;
+
+}
+
+.letter-card{
+
+    width:min(850px,95%);
+
+    background:#fffdf9;
+
+    border-radius:28px;
+
+    padding:50px;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.12);
+
+    position:relative;
+
+    border:1px solid rgba(255,180,210,.5);
+
+}
+
+.letter-card::before{
+
+    content:"❤";
+
+    position:absolute;
+
+    top:20px;
+
+    right:30px;
+
+    font-size:30px;
+
+    color:#ff6b9a;
+
+    opacity:.25;
+
+}
+
+.letter-card h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+#letterText{
+
+    max-height:420px;
+
+    overflow-y:auto;
+
+    padding-right:10px;
+
+}
+
+#letterText p{
+
+    font-size:18px;
+
+    line-height:2;
+
+    color:#555;
+
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+#letterText::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+#letterText::-webkit-scrollbar-thumb{
+
+    background:#ff9dc1;
+
+    border-radius:20px;
+
+}
+
+/* ---------- ENDING PAGE ---------- */
+
+#ending{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ffdce9,
+        #fff2f8
+    );
+
+    text-align:center;
+
+}
+
+#ending .glass{
+
+    animation:endingGlow 4s ease-in-out infinite;
+
+}
+
+#ending h1{
+
+    font-size:72px;
+
+}
+
+#ending p{
+
+    font-size:22px;
+
+    margin-top:20px;
+
+}
+
+/* ---------- FLOATING HEART ---------- */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-40px;
+
+    color:#ff7da8;
+
+    font-size:22px;
+
+    pointer-events:none;
+
+    animation:heartFloat linear forwards;
+
+    z-index:3;
+
+}
+
+/* ---------- FALLING PETAL ---------- */
+
+.petal{
+
+    position:fixed;
+
+    top:-40px;
+
+    width:16px;
+
+    height:16px;
+
+    background:#ffc4da;
+
+    border-radius:70% 30% 70% 30%;
+
+    opacity:.75;
+
+    pointer-events:none;
+
+    animation:petalFall linear forwards;
+
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes petalFall{
+
+0%{
+
+transform:
+translateY(-40px)
+rotate(0deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(110vh)
+rotate(720deg)
+translateX(80px);
+
+opacity:0;
+
+}
+
+}
+
+@keyframes heartFloat{
+
+0%{
+
+transform:
+translateY(0)
+scale(.7);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-120vh)
+scale(1.4);
+
+opacity:0;
+
+}
+
+}
+
+@keyframes endingGlow{
+
+0%{
+
+box-shadow:
+0 0 20px rgba(255,120,170,.15);
+
+}
+
+50%{
+
+box-shadow:
+0 0 45px rgba(255,120,170,.35);
+
+}
+
+100%{
+
+box-shadow:
+0 0 20px rgba(255,120,170,.15);
+
+}
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:900px){
+
+h1{
+
+font-size:56px;
+
+}
+
+h2{
+
+font-size:42px;
+
+}
+
+.glass{
+
+padding:35px;
+
+}
+
+.letter-card{
+
+padding:35px;
+
+}
+
+.photo-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+#giftImage{
+
+width:180px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+body{
+
+overflow:hidden;
+
+}
+
+h1{
+
+font-size:42px;
+
+}
+
+h2{
+
+font-size:34px;
+
+}
+
+p{
+
+font-size:16px;
+
+}
+
+button{
+
+width:100%;
+
+font-size:17px;
+
+padding:15px;
+
+}
+
+.glass{
+
+padding:28px 22px;
+
+}
+
+.letter-card{
+
+padding:28px 22px;
+
+}
+
+.photo-grid{
+
+grid-template-columns:1fr;
+
+gap:18px;
+
+}
+
+#ending h1{
+
+font-size:48px;
+
+}
+
+#ending p{
+
+font-size:18px;
+
+}
+
+}
+
+/* ---------- SMOOTH TRANSITIONS ---------- */
+
+.page,
+button,
+.photo-grid img,
+#giftImage{
+
+transition:all .45s ease;
+
+}
